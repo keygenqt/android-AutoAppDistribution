@@ -5,7 +5,7 @@ Auto App Distribution
 
 ### Target
 
-* Configure service (Firebase App Distribution)[https://firebase.google.com/docs/app-distribution] for AAB.
+* Configure service [Firebase App Distribution](https://firebase.google.com/docs/app-distribution) for AAB.
 * Add the ability to centrally change testers.
 * Automatic provisioning of **releaseNotes** based on git commits.
 

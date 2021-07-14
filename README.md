@@ -21,7 +21,7 @@ _(in the process)_
 ### Preview
 <p>
 <img src="data/preview-1.png" width="38%"/>
-<img src="data/preview-3.gif" width="38%"/>
+<img src="data/preview-gif.gif" width="38%"/>
 </p>
 
 # License

@@ -18,9 +18,9 @@ Auto App Distribution
 * Animation - [Lottie for Android](http://airbnb.io/lottie/#/android-compose)
 
 ### Preview
-<p align="center">
-<img src="data/preview-1.png" width="40%"/>
-<img src="data/preview-3.gif" width="40%"/>
+<p>
+<img src="data/preview-1.png" width="38%"/>
+<img src="data/preview-3.gif" width="38%"/>
 </p>
 
 # License

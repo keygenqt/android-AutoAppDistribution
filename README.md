@@ -1,5 +1,6 @@
 Auto App Distribution
 ===================
+_(in the process)_
 
 ![picture](data/preview0.png)
 

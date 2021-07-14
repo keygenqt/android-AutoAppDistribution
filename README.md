@@ -19,8 +19,8 @@ Auto App Distribution
 
 ### Preview
 <p align="center">
-<img src="data/preview1.png" width="44%"/>
-<img src="data/preview3.gif" width="44%"/>
+<img src="data/preview-1.png" width="40%"/>
+<img src="data/preview-3.gif" width="40%"/>
 </p>
 
 # License

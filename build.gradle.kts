@@ -56,7 +56,7 @@ gradle.taskGraph.beforeTask {
             // download testers
             ant.invokeMethod(
                 "get", mapOf(
-                    "src" to "",
+                    "src" to "https://raw.githubusercontent.com/keygenqt/android-AutoAppDistribution/master/data/testers",
                     "dest" to path
                 )
             )

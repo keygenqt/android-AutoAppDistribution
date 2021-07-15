@@ -48,20 +48,48 @@ buildscript {
 
 // https://docs.gradle.org/current/userguide/build_lifecycle.html
 gradle.taskGraph.beforeTask {
-    // download before build file with list testers for https://firebase.google.com/docs/app-distribution
     if (name == "preBuild") {
-        "${rootProject.rootDir}/distribution".let { path ->
+        // update dir distribution
+        "${rootProject.rootDir}/distribution".let {
             // add dir if not exist
-            mkdir(path)
-            // download testers
-            ant.invokeMethod(
-                "get", mapOf(
-                    "src" to "https://raw.githubusercontent.com/keygenqt/android-AutoAppDistribution/master/data/testers",
-                    "dest" to path
-                )
-            )
-            // create note
-            // @todo add create note
+            mkdir(it)
+            // make data for  https://firebase.google.com/docs/app-distribution
+            updateTesters(it)
+            createNote(it)
         }
     }
+}
+
+// create note from git commits
+fun createNote(dir: String, defaultNote: String = "Minor fixes") {
+    println("> Task :app:createNote")
+    // get topical git log & write to file
+    File("$dir/note").let { file ->
+        file.createNewFile()
+        val time = file.lastModified()
+        val log = """git log --pretty=format:"(%ad, %an) %s" --date=format:"%Y-%m-%d %H:%M:%S" --after=$time""".exec()
+        file.writeText(log.ifEmpty { defaultNote })
+    }
+}
+
+// download before build file with list testers
+fun updateTesters(dir: String) {
+    println("> Task :app:updateTesters")
+    // download testers
+    ant.invokeMethod(
+        "get", mapOf(
+            "src" to "https://raw.githubusercontent.com/keygenqt/android-AutoAppDistribution/master/data/testers",
+            "dest" to dir
+        )
+    )
+}
+
+// execute command
+fun String.exec(): String = java.io.ByteArrayOutputStream().let {
+    project.exec {
+        workingDir = file("./")
+        commandLine = this@exec.split("\\s".toRegex())
+        standardOutput = it
+    }
+    return String(it.toByteArray())
 }

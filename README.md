@@ -6,7 +6,7 @@ _(in the process)_
 
 ### Target
 
-* Configure service [Firebase App Distribution](https://firebase.google.com/docs/app-distribution) for AAB.
+* Configure [gradle](https://firebase.google.com/docs/app-distribution/android/distribute-gradle?apptype=apk) service [Firebase App Distribution](https://firebase.google.com/docs/app-distribution)
 * Add the ability to centrally change testers.
 * Automatic provisioning of **releaseNotes** based on git commits.
 

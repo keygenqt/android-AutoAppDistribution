@@ -13,7 +13,7 @@ plugins {
 spotless {
     kotlin {
         target("**/*.kt")
-        licenseHeaderFile("${project.rootProject.projectDir}/spotless.license")
+        licenseHeaderFile("${rootProject.rootDir}/spotless.license")
     }
     kotlinGradle {
         target("*.gradle.kts")
@@ -30,8 +30,8 @@ android {
         applicationId = "com.keygenqt.auto_distribution"
         minSdk = 23
         targetSdk = 30
-        versionCode = 2
-        versionName = "1.0.0"
+        versionCode = 4
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -43,16 +43,21 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-
+        }
+        debug {
             // Configure distribution properties
+            // gradlew assembleDebug appDistributionUploadDebug
             // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
             firebaseAppDistribution {
-                artifactType = "AAB" // "AAB" or "APK
-                releaseNotesFile = "${rootProject.rootDir}/distribution/notes"
-                testersFile = "${rootProject.rootDir}/distribution/testers"
+                appId = "1:841649622778:android:0d0b2ae9be211ce8600343"
+                artifactType = "APK"
+                serviceCredentialsFile = "${project.rootDir}/KEY/autoappdistribution-7b79e1dbd654.json"
+                releaseNotesFile = "${project.rootDir}/distribution/note"
+                testersFile = "${project.rootDir}/distribution/testers"
             }
         }
     }
+
     buildFeatures {
         compose = true
     }

@@ -30,8 +30,8 @@ android {
         applicationId = "com.keygenqt.auto_distribution"
         minSdk = 23
         targetSdk = 30
-        versionCode = 4
-        versionName = "1.0.1"
+        versionCode = 5
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

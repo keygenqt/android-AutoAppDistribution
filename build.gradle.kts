@@ -67,8 +67,10 @@ fun createNote(dir: String, defaultNote: String = "Minor fixes") {
     File("$dir/note").let { file ->
         file.createNewFile()
         val time = file.lastModified()
-        val log = """git log --pretty=format:"(%ad, %an) %s" --date=format:"%Y-%m-%d %H:%M:%S" --after=$time""".exec()
-        file.writeText(log.ifEmpty { defaultNote })
+        val log = listOf("git", "log", "--after=$time", "--pretty=format:'(%ad, %an) %s'").exec()
+        if (file.readText().let { log.isNotBlank() || it != defaultNote}) {
+            file.writeText(log.ifEmpty { defaultNote })
+        }
     }
 }
 
@@ -85,10 +87,10 @@ fun updateTesters(dir: String) {
 }
 
 // execute command
-fun String.exec(): String = java.io.ByteArrayOutputStream().let {
+fun List<String>.exec(): String = java.io.ByteArrayOutputStream().let {
     project.exec {
         workingDir = file("./")
-        commandLine = this@exec.split("\\s".toRegex())
+        commandLine = this@exec
         standardOutput = it
     }
     return String(it.toByteArray())

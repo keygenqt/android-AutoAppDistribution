@@ -25,8 +25,11 @@ Auto App Distribution
 
 ### Result
 App Distribution gradle have problem for AAB (See screenshot, taken on 08/03/2021).
+
 ![picture](data/aab.png)
+
 APK work ok.
+
 ![picture](data/apk.png)
 
 # License

@@ -1,6 +1,5 @@
 Auto App Distribution
 ===================
-_(in the process)_
 
 ![picture](data/preview-0.png)
 
@@ -22,6 +21,13 @@ _(in the process)_
 <p>
 <img src="data/preview-1.png" width="38%"/>
 <img src="data/preview.gif" width="38%"/>
+</p>
+
+### Result
+App Distribution gradle have problem for AAB (See screenshot, taken on 08/03/2021). APK work ok.
+<p>
+<img src="data/apk.png" width="48%"/>
+<img src="data/aab.png" width="48%"/>
 </p>
 
 # License

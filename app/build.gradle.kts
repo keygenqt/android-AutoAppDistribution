@@ -30,8 +30,8 @@ android {
         applicationId = "com.keygenqt.auto_distribution"
         minSdk = 23
         targetSdk = 30
-        versionCode = 5
-        versionName = "1.0.2"
+        versionCode = 7
+        versionName = "1.0.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -50,7 +50,7 @@ android {
             // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
             firebaseAppDistribution {
                 appId = "1:841649622778:android:0d0b2ae9be211ce8600343"
-                artifactType = "APK"
+                artifactType = "AAB"
                 serviceCredentialsFile = "${project.rootDir}/KEY/autoappdistribution-7b79e1dbd654.json"
                 releaseNotesFile = "${project.rootDir}/distribution/note"
                 testersFile = "${project.rootDir}/distribution/testers"

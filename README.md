@@ -24,11 +24,10 @@ Auto App Distribution
 </p>
 
 ### Result
-App Distribution gradle have problem for AAB (See screenshot, taken on 08/03/2021). APK work ok.
-<p>
-<img src="data/apk.png" width="48%"/>
-<img src="data/aab.png" width="48%"/>
-</p>
+App Distribution gradle have problem for AAB (See screenshot, taken on 08/03/2021).
+![picture](data/aab.png)
+APK work ok.
+![picture](data/apk.png)
 
 # License
 
